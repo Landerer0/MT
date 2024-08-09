@@ -1,10 +1,19 @@
 # Sketches basados en cuantiles
 
 ## Sketches KLL y MRL
-### Compilación
 
+### Ejemplo de compilación y ejecución
 
-### Ejemplo de uso
+La compilación usando los sketches KLL y MRL no necesita proporcionar ficheros externos, para el 
+ejemplo encontrado en este repositorio corresponde a:
+
+$ g++ -O3 -o main main.cpp kll.hpp kll.cpp
+
+En el fichero main.cpp proporcionado se estiman los valores de los ranks y elementos encontrados 
+en una distribución normal con media y desviación estandar de 10 millones y 3 millones respectivamente. 
+La ejecución de dicho fichero se realiza mediante:
+
+$ ./main
 
 ## Sketches KLLTuple y MRLTuple
 ### Compilación

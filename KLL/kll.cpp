@@ -5,6 +5,7 @@
 #include <string.h>
 #include <chrono>
 #include <fstream>
+#include <map>
 
 #include "kll.hpp"
 
@@ -1228,7 +1229,7 @@ vector<double> KLL::select(vector<uint64_t> ranks){
         continue;
     }
 
-    cerr << "Select Normal size: " << vectorElementos.size() << endl;
+    //cerr << "Select Normal size: " << vectorElementos.size() << endl;
     while(ranks.size()!=selected.size()){
         ranks.push_back(pow(2,H_pp)*actualRank);
     }
@@ -1313,6 +1314,7 @@ void KLL::print(){
         cout << "Nivel " << i+H_pp << ": (" << sketch.at(i).second << "/" << sketch.at(i).first.size() << ")" << endl;
         vector<double> nivelI = sketch.at(i).first;
         for(int j=0;j<nivelI.size();j++){
+            if(nivelI.at(j)==-1 || nivelI.at(j)==-2) continue;
             printf("%lf ",nivelI.at(j));
             //cout << nivelI.at(j) << " ";
         }
